@@ -1,0 +1,524 @@
+@charset "UTF-8";
+/*
+nav
+*/
+#header {
+  position: fixed;
+  width: 100%;
+  height: 100px;
+  z-index: 100;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  background: -webkit-gradient(linear, right top, left top, from(yellow), color-stop(50%, lightyellow), color-stop(10%, lightyellow));
+  background: linear-gradient(to left, yellow, lightyellow 50%, lightyellow 10%);
+}
+
+#nav ul {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  text-transform: uppercase;
+  margin: 0 0 0 5%;
+}
+
+#nav li {
+  padding: 0 10px;
+}
+
+.nav li a {
+  display: block;
+  padding: 0 10px;
+  -webkit-transition: all .6s ease-in-out;
+  transition: all .6s ease-in-out;
+}
+
+/*
+accordion
+*/
+.accordion-area {
+  width: 90%;
+  max-width: 959px;
+  margin: 0 auto;
+}
+
+.accordion-area li {
+  margin: 10px 0;
+}
+
+.accordion-area section {
+  border: 1px solid #ccc;
+}
+
+.title {
+  cursor: pointer;
+  font-size: 1rem;
+  font-weight: normal;
+  padding: 10px 10px 10px 50px;
+  -webkit-transition: all .5s ease;
+  transition: all .5s ease;
+  position: relative;
+}
+
+.title::before, .title::after {
+  content: "";
+  width: 15px;
+  height: 2px;
+  position: absolute;
+  background-color: #333;
+}
+
+.title::before {
+  top: 48%;
+  left: 15px;
+  -webkit-transform: rotate(0deg);
+          transform: rotate(0deg);
+}
+
+.title::after {
+  top: 48%;
+  left: 15px;
+  -webkit-transform: rotate(90deg);
+          transform: rotate(90deg);
+}
+
+.title.close::before {
+  -webkit-transform: rotate(45deg);
+          transform: rotate(45deg);
+}
+
+.title.close::after {
+  -webkit-transform: rotate(-45deg);
+          transform: rotate(-45deg);
+}
+
+.box {
+  display: none;
+  background: #eee;
+  margin: 0 10px 10px 10px;
+  padding: 3%;
+}
+
+/*
+open-btn
+*/
+.open-btn {
+  position: fixed;
+  z-index: 9999;
+  top: 5%;
+  right: 0;
+  cursor: pointer;
+  width: 80px;
+  height: 70px;
+}
+
+.open-btn span {
+  display: inline-block;
+  -webkit-transition: all .4s;
+  transition: all .4s;
+  position: absolute;
+}
+
+.open-btn span:nth-of-type(1), .open-btn span:nth-of-type(3) {
+  height: 2px;
+  background: #333;
+  width: 30%;
+  opacity: 0;
+  top: 20px;
+  left: 20px;
+}
+
+.open-btn span:nth-of-type(2) {
+  top: 0;
+  left: 18px;
+  text-transform: uppercase;
+  color: #333;
+  font-size: 0.9rem;
+}
+
+.open-btn span:nth-of-type(3) {
+  top: 20px;
+}
+
+/*
+activeクラス付与時
+*/
+.open-btn.active span:nth-of-type(1),
+.open-btn.active span:nth-of-type(3) {
+  opacity: 1;
+}
+
+.open-btn.active span:nth-of-type(1) {
+  top: 18px;
+  left: 30px;
+  -webkit-transform: translateY(6px) rotate(-45deg);
+          transform: translateY(6px) rotate(-45deg);
+}
+
+.open-btn.active span:nth-of-type(2) {
+  opacity: 0;
+}
+
+.open-btn.active span:nth-of-type(3) {
+  top: 30px;
+  left: 30px;
+  -webkit-transform: translateY(-6px) rotate(45deg);
+          transform: translateY(-6px) rotate(45deg);
+}
+
+/*
+click時にナビ出現
+*/
+#open-navi {
+  position: fixed;
+  z-index: 999;
+  top: -200%;
+  width: 100%;
+  height: 100vh;
+  -webkit-transform: all .6s;
+          transform: all .6s;
+}
+
+#open-navi.panel {
+  top: 0;
+}
+
+#open-navi.panel .open-navi-list {
+  display: block;
+}
+
+#open-navi.panel ul {
+  opacity: 1;
+}
+
+#open-navi ul {
+  opacity: 0;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  -webkit-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
+  z-index: 999;
+}
+
+#open-navi ul li {
+  text-align: center;
+  -webkit-animation: naviA 1s .2s forwards;
+          animation: naviA 1s .2s forwards;
+  opacity: 0;
+}
+
+#open-navi ul li a {
+  display: block;
+  color: #333;
+  padding: 15px 0;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  font-weight: bold;
+  font-size: 1.5rem;
+}
+
+@-webkit-keyframes naviA {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+@keyframes naviA {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+.open-navi-list {
+  display: none;
+}
+
+.bg {
+  position: fixed;
+  z-index: 100;
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+  background-color: yellow;
+  -webkit-transform: scale(0);
+          transform: scale(0);
+  -webkit-transition: all .6s;
+  transition: all .6s;
+  right: -50%;
+  top: -50%;
+}
+
+.bg.circleactive {
+  -webkit-transform: scale(50);
+          transform: scale(50);
+}
+
+@media screen and (max-width: 425px) {
+  #open-navi ul li a {
+    font-size: 0.9rem;
+  }
+}
+
+/*
+スクロールダウン
+*/
+.top-main {
+  width: 100%;
+  height: 50vh;
+  position: relative;
+}
+
+.top-main::before {
+  content: '';
+  position: fixed;
+  top: 5vh;
+  left: 5%;
+  background: url(../images/tokyo-railway-station-and-business-district-building-at-night-japan.jpg) center no-repeat;
+  background-size: cover;
+  z-index: -1;
+  width: 90%;
+  height: 500px;
+}
+
+#container {
+  position: relative;
+  z-index: 10;
+  background: #fff;
+}
+
+/*
+ページトップへ
+*/
+.top {
+  position: fixed;
+  right: 1%;
+  bottom: 0;
+  z-index: 100;
+  opacity: 0;
+  -webkit-transform: translateY(100px);
+          transform: translateY(100px);
+}
+
+.top a {
+  border-radius: 5px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  background: #333;
+  color: #fff;
+  width: 60px;
+  height: 60px;
+  text-align: center;
+  font-size: 0.6rem;
+  -webkit-transition: all .6s;
+  transition: all .6s;
+}
+
+.top a:hover {
+  opacity: 0.7;
+}
+
+.top.UpMove {
+  -webkit-animation: UpAnime 0.5s forwards;
+          animation: UpAnime 0.5s forwards;
+}
+
+.top.DownMove {
+  -webkit-animation: DownAnime 0.5s forwards;
+          animation: DownAnime 0.5s forwards;
+}
+
+@-webkit-keyframes UpAnime {
+  from {
+    opacity: 0;
+    -webkit-transform: translateY(100px);
+            transform: translateY(100px);
+  }
+  to {
+    opacity: 1;
+    -webkit-transform: translateY(0);
+            transform: translateY(0);
+  }
+}
+
+@keyframes UpAnime {
+  from {
+    opacity: 0;
+    -webkit-transform: translateY(100px);
+            transform: translateY(100px);
+  }
+  to {
+    opacity: 1;
+    -webkit-transform: translateY(0);
+            transform: translateY(0);
+  }
+}
+
+@-webkit-keyframes DownAnime {
+  from {
+    opacity: 1;
+    -webkit-transform: translateY(0);
+            transform: translateY(0);
+  }
+  to {
+    opacity: 1;
+    -webkit-transform: translateY(100px);
+            transform: translateY(100px);
+  }
+}
+
+@keyframes DownAnime {
+  from {
+    opacity: 1;
+    -webkit-transform: translateY(0);
+            transform: translateY(0);
+  }
+  to {
+    opacity: 1;
+    -webkit-transform: translateY(100px);
+            transform: translateY(100px);
+  }
+}
+
+/*
+ニュースティッカー
+*/
+.slider {
+  width: 100%;
+  margin: 0 0 100px 0;
+}
+
+.slider a {
+  display: block;
+  background: -webkit-gradient(linear, right top, left top, from(yellow), color-stop(50%, lightyellow), color-stop(10%, lightyellow));
+  background: linear-gradient(to left, yellow, lightyellow 50%, lightyellow 10%);
+  padding: 20px;
+}
+
+.slider span {
+  display: inline-block;
+  font-size: 1rem;
+  margin-right: 10px;
+  color: #333;
+}
+
+/*
+テキストタイピング
+*/
+.textTyping span {
+  display: none;
+}
+
+.textTyping::after {
+  content: "|";
+  -webkit-animation: typing .8s ease infinite;
+          animation: typing .8s ease infinite;
+}
+
+@-webkit-keyframes typing {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes typing {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+/*
+フェードアップダウンアニメ
+*/
+.fadeUp {
+  -webkit-animation-name: fadeUpAnime;
+          animation-name: fadeUpAnime;
+  -webkit-animation-duration: 0.6s;
+          animation-duration: 0.6s;
+  -webkit-animation-delay: 1s;
+          animation-delay: 1s;
+  -webkit-animation-timing-function: ease-in;
+          animation-timing-function: ease-in;
+  -webkit-animation-fill-mode: forwards;
+          animation-fill-mode: forwards;
+  opacity: 0;
+}
+
+@-webkit-keyframes fadeUpAnime {
+  from {
+    opacity: 0;
+    -webkit-transform: translateY(100px);
+            transform: translateY(100px);
+  }
+  to {
+    opacity: 1;
+    -webkit-transform: translateY(0px);
+            transform: translateY(0px);
+  }
+}
+
+@keyframes fadeUpAnime {
+  from {
+    opacity: 0;
+    -webkit-transform: translateY(100px);
+            transform: translateY(100px);
+  }
+  to {
+    opacity: 1;
+    -webkit-transform: translateY(0px);
+            transform: translateY(0px);
+  }
+}
+
+.fadeUpT {
+  opacity: 0;
+}
+
+/* 画像拡大回転 */
+.zoomR {
+  -webkit-transform: scale(1);
+          transform: scale(1);
+  -webkit-transition: .3s ease-in-out;
+  transition: .3s ease-in-out;
+}
+
+.zoomR:hover {
+  -webkit-transform: rotate(3deg) scale(1.1);
+          transform: rotate(3deg) scale(1.1);
+  opacity: 0.8;
+}
+
+.mask {
+  display: block;
+  line-height: 0;
+  overflow: hidden;
+}
+/*# sourceMappingURL=parts.css.map */

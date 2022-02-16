@@ -1,0 +1,664 @@
+/*
+common
+*/
+
+html {
+  font-size: 100%;
+}
+
+body {
+  font-weight: normal;
+  font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+}
+
+img {
+  width: 100%;
+  height: auto;
+  vertical-align: bottom;
+}
+
+a {
+  text-decoration: none;
+  color: #333;
+  outline: none;
+}
+
+ul {
+  list-style: none;
+}
+
+h2 {
+  font-size: 2.5rem;
+  text-transform: uppercase;
+}
+
+/*
+header
+*/
+
+h1 {
+  font-size: 3rem;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  line-height: 1.8;
+  padding: 0 50px;
+  position: absolute;
+  top: 10%;
+  left: 5%;
+}
+
+@media screen and(max-width:768px) {
+  #nav {
+    display: none;
+  }
+}
+
+
+@media screen and(max-width:425px) {
+  #header h1 {
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    margin: 0 auto;
+  }
+}
+
+/*
+top-main
+*/
+
+.top-lead {
+  font-size: 2rem;
+  font-weight: bold;
+  text-transform: uppercase;
+  line-height: 1.5;
+  position: fixed;
+  top: 30%;
+  left: 7%;
+  color: #fff;
+  text-shadow: 3px 3px 5px #333;
+}
+
+@media screen and(max-width:1024px) {
+  .top-lead {
+    font-size: 1.8rem;
+    top: 30%;
+  }
+}
+
+@media screen and(max-width:768px) {
+  .top-lead {
+    font-size: 1.3rem;
+    top: 35%;
+  }
+
+  .top-main::before {
+    height: 400px;
+  }
+}
+
+@media screen and(max-width:425px) {
+  .top-lead {
+    font-size: 0.8rem;
+    top: 30%;
+    left: 2%;
+  }
+
+  .top-main {
+    margin-bottom: 50px;
+
+    &::before {
+      width: 100%;
+      top: 0;
+      left: 0;
+    }
+  }
+}
+
+
+/*
+main
+*/
+
+#main {
+  width: 90%;
+  margin: 0 auto;
+  padding: 100px 0 50px 0;
+}
+
+
+@media screen and(max-width:425px) {
+  #main {
+    width: 100%;
+  }
+}
+
+
+/*
+topics
+*/
+
+#topics h2 {
+  padding: 20px;
+}
+
+
+/*
+section1
+*/
+
+#section1 {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  margin: 0 0 200px 0;
+
+  & .img1 {
+    background: url(../images/business-man-financial-inspector-and-secretary-making-report-calculating-or-checking-balance-internal-revenue-service-inspector-checking-document-audit-concept.jpg) center no-repeat;
+    background-size: cover;
+    width: 50%;
+    min-height: 500px;
+    border-radius: 5px;
+  }
+
+  & .content1 {
+    width: 50%;
+    text-align: center;
+    position: relative;
+
+    & h2 {
+    margin-top: 50px;
+
+      &::after {
+        content: '';
+        position: absolute;
+        top: 18%;
+        right: 25%;
+        width: 50%;
+        height: 2px;
+        background: #333;
+      }
+    }
+  }
+}
+
+.content1-lead {
+  font-size: 1rem;
+  margin: 50px 0;
+
+  & span {
+    display: block;
+    letter-spacing: 1px;
+    line-height: 1.8;
+    padding: 10px 0;
+  }
+}
+
+.content1-lead2 {
+  margin: 0 0 90px 0;
+  
+  & span {
+    font-size: 1.8rem;
+    display: block;
+    margin-bottom: 10px;
+    line-height: 1.2;
+  }
+}
+
+@media screen and(max-width:1024px) {
+  #section1 .content1 h2::after {
+    width: 200px;
+    right: 23%;
+  }
+}
+
+@media screen and(max-width:768px) {
+  #section1 .content1 h2::after {
+    display: none;
+  }
+
+  #section {
+    flex-wrap: wrap;
+    flex-direction: column;
+  }
+
+  .content1-lead {
+    font-size: 0.9rem;
+  }
+
+  .content1-lead2 {
+    font-size: 0.9rem;
+  }
+}
+
+@media screen and(max-width:425px) {
+  #section1 .content1 h2::after {
+    display: none;
+  }
+
+  #section1 {
+    display: block;
+    width: 100%;
+    margin-bottom: 100px;
+
+    & .content1 {
+      width: 100%;
+
+      &-lead {
+        font-size: 0.9rem;
+        margin-bottom: 30px;
+      }
+
+      &-lead2 {
+        font-size: 0.9rem;
+        margin-bottom: 50px;
+      }
+    }
+
+    & .img1 {
+      width: 100%;
+      margin-bottom: 50px;
+    }
+  }
+}
+
+
+
+/*
+section2
+*/
+
+#section2 {
+  display: flex;
+  justify-content: center;
+  flex-flow: row-reverse;
+  margin: 0 0 200px 0;
+
+  & .img2 {
+    width: 50%;
+    min-height: 400px;
+    background: url(../images/east-coast-xincheng-district-shantou-city-guangdong-province-china.jpg) center no-repeat;
+    background-size: cover;
+    border-radius: 5px;
+  }
+}
+
+.content2 {
+  width: 50%;
+  margin-right: 50px;
+  position: relative;
+
+  & h2 {
+    margin: 0 0 50px 0;
+    padding: 0 20px 5px 0;
+    text-align: center;
+  }
+
+  &::after {
+    content: '';
+    position: absolute;
+    width: 50%;
+    height: 2px;
+    background: #333;
+    top: 8%;
+    left: 22%;
+  }
+}
+
+.timeline {
+  width: 50%;
+  max-width: 500px;
+  margin: 0 auto 70px auto;
+  padding: 30px 30px 0 30px;
+
+  & li {
+    position: relative;
+    padding: 0 0 30px 0;
+    
+    &::after {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 10px;
+      height: 10px;
+      background: #666;
+      border-radius: 50%;
+    }
+  }
+  
+  & dl {
+    margin: 0 3em 20px 3em;
+  }
+
+  & dt, dd {
+    font-size: 1.2rem;
+    margin-bottom: 10px;
+  }
+}
+
+.border-line {
+  position: absolute;
+  left: 0.2em;
+  top: 0;
+  width: 2px;
+  height: 0;
+  background: #ccc;
+}
+
+@media screen and(max-width:1024px) {
+  #section2 .content2::after {
+    left: 15%;
+  }
+}
+
+@media screen and(max-width:768px) {
+  #section2 .content2::after {
+    display: none;
+  }
+
+  .timeline {
+    width: 60%;
+  }
+}
+
+@media screen and(max-width:425px) {
+  #section2 {
+    display: block;
+    margin-bottom: 100px;
+
+    & .content2 {
+      width: 100%;
+    }
+
+    & .img2 {
+      width: 100%;
+      margin-bottom: 50px;
+    }
+  }
+}
+
+/*
+faq
+*/
+
+.faq-bg {
+  background: url(../images/millennial-asia-businessmen-and-businesswomen-meeting-brainstorming-ideas-about-new-paperwork-project-colleagues-working-together-planning-success-strategy-enjoy-teamwork-in-small-modern-night-office.jpg) center no-repeat;
+  background-size: cover;
+  height: 50vh;
+  margin: 0 0 200px 25%;
+  position: relative;
+  border-radius: 5px;
+
+  &::after {
+    content: '';
+    position: absolute;
+    top: 20%;
+    left: -30%;
+    width: 30%;
+    height: 50vh;
+    background: linear-gradient(to left, yellow, lightyellow  50%, lightyellow 10%);
+    z-index: -10;
+  }
+}
+
+@media screen and(max-width:425px) {
+  .faq-bg {
+    width: 100%;
+    margin: 0 0 50px 0;
+
+    &::after {
+      width: 100%;
+      left: 0;
+    }
+  }
+}
+
+/*
+section3
+*/
+
+#section3 {
+  margin: 0 0 200px 0;
+}
+
+.content3 {
+  position: relative;
+  width: 100%;
+  
+  & h2 {
+    margin: 0 0 70px 0;
+    padding: 0 30px;
+    text-align: center;
+  }
+
+  &::after {
+    content: '';
+    position: absolute;
+    width: 30%;
+    height: 2px;
+    background: #333;
+    top: 20%;
+    left: 35%;
+  }
+}
+
+@media screen and(max-width:1024px) {
+  #section3 .content3::after {
+    left: 36%;
+  }
+}
+
+@media screen and(max-width:768px) {
+  #section3 .content3::after {
+    display: none;
+  }
+}
+
+@media screen and(max-width:425px) {
+  #section3 {
+    margin-top: 50px;
+  }
+}
+
+
+
+/*
+section4
+*/
+
+#section4 {
+  margin: 0 0 100px 0;
+}
+
+.content4 {
+  width: 100%;
+  position: relative;
+
+  & h2 {
+    margin: 0 0 100px 0;
+    padding: 0 30px;
+    text-align: center;
+  }
+
+  &::after {
+    content: '';
+    position: absolute;
+    width: 30%;
+    height: 2px;
+    background: #333;
+    top: 8%;
+    left: 35%;
+  }
+}
+
+.contact-list {
+  width: 100%;
+  max-width: 700px;
+  margin: 0 auto;
+  
+  & input, button, textarea {
+    font-size: 16px;
+    margin: 0;
+    padding: 0;
+    border: none;
+    background: none;
+  }
+
+  & dl {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    padding: 0 0 20px 0;
+  }
+
+  & dt {
+    width: 30%;
+  }
+
+  & dd {
+    width: 65%;
+  }
+
+  & textarea {
+    height: 200px;
+  }
+  
+  & input[type='text'],
+  & input[type='mail'],
+  & textarea {
+    width: 100%;
+    border: 1px solid #666;
+    background: #fff;
+    padding: 10px;
+    border-radius: 5px;
+  }
+
+  & input[type='text'],
+  & input[type='mail'] {
+    height: 50px;
+  }
+
+}
+
+.submit-btn {
+  width: 150px;
+  margin: 0 auto;
+  position: relative;
+  
+  & input[type='submit'] {
+    border: 1px solid #333;
+    text-align: center;
+    padding: 5px 20px;
+    width: 150px;
+    margin: 0 auto;
+    transition: all .3s;
+    position: absolute;
+    top: 0;
+    left: 120px;
+    border-radius: 5px;
+
+    &:hover {
+      background: #333;
+      color: #fff;
+    }
+  }
+}
+
+
+@media screen and(max-width:1024px) {
+  #section4 .content4::after {
+    left: 36.5%;
+  }
+}
+
+@media screen and(max-width:768px) {
+  #section4 .content4::after {
+    display: none;
+  }
+}
+
+@media screen and(max-width:425px) {
+  #section4 {
+    width: 100%;
+  }
+
+  .contact-list {
+    width: 100%;
+    max-width: 425px;
+
+    & label {
+      display: block;
+      text-align: center;
+      font-size: 0.9rem;
+    }
+
+    & dl {
+      display: block;
+      padding: 3%;
+    }
+
+    & dt {
+      margin: 0 auto;
+      margin-bottom: 10px;
+      width: 100%;
+    }
+
+    & dd {
+      margin: 0 auto;
+      width: 100%;
+    }
+  }
+
+  .content4 h2 {
+    margin-bottom: 30px;
+  }
+
+  .submit-btn {
+    // margin: 0 auto;
+    // width: 100px;
+    // text-align: center;
+    padding: 3%;
+
+    & input[type='submit'] {
+      // margin: 0 auto;
+      // text-align: center;
+      left: 0;
+    }
+  }
+}
+
+/*
+foooter
+*/
+
+#footer {
+  text-align: center;
+  padding: 30px 0;
+  margin-right: 50px 0;
+  text-transform: uppercase;
+  border-top: 1px solid #333;
+  background: linear-gradient(to left, yellow, lightyellow  50%, lightyellow 10%);
+
+  & .footer-logo {
+    font-weight: bold;
+    letter-spacing: 0.3em;
+    margin: 0 0 10px 0;
+    padding: 10px 0;
+    color: #333;
+  }
+
+  & small {
+    display: block;
+    letter-spacing: 0.3em;
+    padding: 10px 0;
+    margin-bottom: 10px;
+  }
+}
+
+
+.credit {
+  text-align: center;
+  background: linear-gradient(to left, yellow, lightyellow  50%, lightyellow 10%);
+}
